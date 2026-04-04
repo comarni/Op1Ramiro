@@ -1,0 +1,588 @@
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramiro | Restaurante en Alcobendas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C65A1E;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-neutral-400 font-['Inter'] font-light antialiased selection:bg-[#C65A1E] selection:text-white overflow-x-hidden">
+
+    <!-- 1. HEADER -->
+    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-['Forum'] text-xl text-white tracking-tight uppercase group-hover:text-[#C65A1E] transition-colors duration-300">
+                    Ramiro
+                </span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#nosotros" class="text-sm text-neutral-300 hover:text-white transition-colors duration-200">Nosotros</a>
+                <a href="#carta" class="text-sm text-neutral-300 hover:text-white transition-colors duration-200">Carta</a>
+                <a href="#equipo" class="text-sm text-neutral-300 hover:text-white transition-colors duration-200">Equipo</a>
+                <a href="#blog" class="text-sm text-neutral-300 hover:text-white transition-colors duration-200">Blog</a>
+                <a href="#ubicacion" class="text-sm text-neutral-300 hover:text-white transition-colors duration-200">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#reserva" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-normal text-white bg-[#C65A1E] rounded-xl hover:bg-[#a84915] hover:shadow-[0_0_20px_rgba(198,90,30,0.4)] transition-all duration-300">
+                    Reservar Mesa
+                </a>
+                <button class="md:hidden text-white p-2">
+                    <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24" stroke-width="1.5"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative h-screen min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <video autoplay="" loop="" muted="" playsinline="" class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://cdn.coverr.co/videos/coverr-fire-in-a-fireplace-5334/1080p.mp4" type="video/mp4">
+        </video>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/60 to-[#0a0a0a]/90"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center animate-fade-in">
+            <h1 class="font-['Forum'] text-5xl md:text-7xl lg:text-8xl text-white tracking-tight leading-none mb-6">
+                Una Cocina de Autor <br> 
+                <span class="text-[#C65A1E] italic font-normal">Forjada por el Fuego</span>
+            </h1>
+            <p class="text-base md:text-lg text-neutral-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                Adéntrate en Ramiro — donde las recetas tradicionales, las especialidades a la brasa y la gastronomía contemporánea se unen para crear una experiencia inolvidable en el corazón de Alcobendas.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="#carta" class="w-full sm:w-auto px-8 py-3.5 text-sm font-normal text-white bg-[#C65A1E] rounded-xl hover:bg-[#a84915] hover:shadow-[0_0_25px_rgba(198,90,30,0.5)] transition-all duration-300 flex items-center justify-center gap-2">
+                    Ver Carta
+                    <iconify-icon icon="solar:arrow-right-linear" width="18" height="18" stroke-width="1.5"></iconify-icon>
+                </a>
+                <a href="#reserva" class="w-full sm:w-auto px-8 py-3.5 text-sm font-normal text-white border border-white/20 rounded-xl hover:bg-white/5 hover:border-white/40 transition-all duration-300 flex items-center justify-center">
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-neutral-500 animate-bounce">
+            <span class="text-xs uppercase tracking-widest">Descubrir</span>
+            <iconify-icon icon="solar:arrow-down-linear" width="16" height="16" stroke-width="1.5"></iconify-icon>
+        </div>
+    </section>
+
+    <!-- 3. RESERVATION SECTION -->
+    <section id="reserva" class="relative z-20 -mt-20 md:-mt-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-[#111] border border-white/5 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl flex flex-col md:flex-row">
+                <div class="p-10 md:p-12 md:w-2/5 flex flex-col justify-center bg-gradient-to-br from-[#111] to-[#1a1a1a]">
+                    <h2 class="font-['Forum'] text-3xl md:text-4xl text-white tracking-tight mb-4">Reserva tu Mesa</h2>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-8">
+                        Disfruta de sabores inolvidables en un ambiente cálido y exclusivo. Para grupos de más de 8 personas, por favor contáctanos directamente.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-neutral-300">
+                        <iconify-icon icon="solar:phone-linear" width="20" stroke-width="1.5" class="text-[#C65A1E]"></iconify-icon>
+                        +34 912 345 678
+                    </div>
+                </div>
+                
+                <div class="p-10 md:p-12 md:w-3/5 border-t md:border-t-0 md:border-l border-white/5">
+                    <form class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 ml-1">Nombre Completo</label>
+                            <input type="text" placeholder="Ej. Alejandro Gómez" class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 ml-1">Teléfono</label>
+                            <input type="tel" placeholder="+34..." class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 ml-1">Fecha</label>
+                            <input type="date" class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 ml-1">Hora</label>
+                            <div class="relative">
+                                <select class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+                                    <option>13:30</option>
+                                    <option>14:00</option>
+                                    <option>14:30</option>
+                                    <option>20:30</option>
+                                    <option>21:00</option>
+                                    <option>21:30</option>
+                                </select>
+                                <iconify-icon icon="solar:alt-arrow-down-linear" stroke-width="1.5" class="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5 sm:col-span-2">
+                            <label class="text-xs text-neutral-400 ml-1">Número de Personas</label>
+                            <div class="relative">
+                                <select class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+                                    <option>2 Personas</option>
+                                    <option>3 Personas</option>
+                                    <option>4 Personas</option>
+                                    <option>5+ Personas</option>
+                                </select>
+                                <iconify-icon icon="solar:users-group-rounded-linear" stroke-width="1.5" class="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none"></iconify-icon>
+                            </div>
+                        </div>
+                        <button type="button" class="sm:col-span-2 mt-2 w-full px-6 py-3.5 text-sm font-normal text-[#0a0a0a] bg-white rounded-xl hover:bg-[#C65A1E] hover:text-white hover:shadow-[0_0_20px_rgba(198,90,30,0.4)] transition-all duration-300">
+                            Confirmar Reserva
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ABOUT / WHY CHOOSE US -->
+    <section id="nosotros" class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            <div class="w-full lg:w-1/2 relative">
+                <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&amp;w=2069&amp;auto=format&amp;fit=crop" alt="Cocinando al fuego" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700">
+                </div>
+                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-[#111] rounded-full border border-white/5 hidden md:flex items-center justify-center p-6">
+                    <p class="font-['Forum'] text-center text-sm text-white tracking-tight uppercase">Elaborado<br><span class="text-[#C65A1E]">Con Pasión</span><br>Desde 2018</p>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 space-y-8">
+                <div>
+                    <span class="text-[#C65A1E] text-xs font-normal tracking-widest uppercase mb-2 block">Nuestra Historia</span>
+                    <h2 class="font-['Forum'] text-4xl md:text-5xl text-white tracking-tight leading-tight">La Experiencia <br> Ramiro</h2>
+                </div>
+                <p class="text-base text-neutral-400 leading-relaxed font-light">
+                    En Ramiro, llevamos el alma de la gastronomía a tu plato. Nuestra filosofía culinaria está arraigada en las tradiciones locales de la península, donde el fuego, las brasas y las técnicas respetuosas transforman los ingredientes más sencillos en auténticos festines.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+                            <iconify-icon icon="solar:flame-linear" width="22" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-normal text-white mb-1">A la Brasa</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Especialidades cocinadas a fuego abierto para un sabor profundo.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+                            <iconify-icon icon="solar:leaf-linear" width="22" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-normal text-white mb-1">Ingredientes Frescos</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Producto local y de proximidad seleccionado a diario.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+                            <iconify-icon icon="solar:star-linear" width="22" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-normal text-white mb-1">Sabores Auténticos</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Recetas transmitidas de generación en generación.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+                            <iconify-icon icon="solar:cup-hot-linear" width="22" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-normal text-white mb-1">Ambiente Exclusivo</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Un entorno íntimo y elegante perfecto para cualquier ocasión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CATEGORY SECTION -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <a href="#carta" class="group relative aspect-square rounded-2xl overflow-hidden block">
+                    <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight">Para Empezar</h3>
+                    </div>
+                </a>
+                <a href="#carta" class="group relative aspect-square rounded-2xl overflow-hidden block">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&amp;w=1974&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight">De la Brasa</h3>
+                    </div>
+                </a>
+                <a href="#carta" class="group relative aspect-square rounded-2xl overflow-hidden block">
+                    <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?q=80&amp;w=2088&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight">Principales</h3>
+                    </div>
+                </a>
+                <a href="#carta" class="group relative aspect-square rounded-2xl overflow-hidden block">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight">Coctelería</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. MENU SECTION -->
+    <section id="carta" class="py-24 md:py-32 px-6 bg-[#0d0d0d]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-[#C65A1E] text-xs font-normal tracking-widest uppercase mb-2 block">Nuestros Clásicos</span>
+                <h2 class="font-['Forum'] text-4xl md:text-5xl text-white tracking-tight">Elaborados con Pasión</h2>
+            </div>
+
+            <div class="space-y-10">
+                <div class="group">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight group-hover:text-[#C65A1E] transition-colors">Croquetas Artesanas de Rabo de Toro</h3>
+                        <div class="flex-grow border-b border-white/10 border-dotted mx-4 relative top-[-6px]"></div>
+                        <span class="font-['Forum'] text-xl text-white">14€</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 font-light pr-12">Crujientes por fuera y melosas por dentro, acompañadas de un velo de papada ibérica y emulsión de trufa.</p>
+                </div>
+
+                <div class="group">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight group-hover:text-[#C65A1E] transition-colors">Selección de Cortes a la Brasa</h3>
+                        <div class="flex-grow border-b border-white/10 border-dotted mx-4 relative top-[-6px]"></div>
+                        <span class="font-['Forum'] text-xl text-white">32€</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 font-light pr-12">Lomo bajo de vaca madurada 45 días, secreto ibérico de bellota y mollejas glaseadas al carbón de encina.</p>
+                </div>
+
+                <div class="group">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight group-hover:text-[#C65A1E] transition-colors">Arroz Meloso de Carabinero</h3>
+                        <div class="flex-grow border-b border-white/10 border-dotted mx-4 relative top-[-6px]"></div>
+                        <span class="font-['Forum'] text-xl text-white">24€</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 font-light pr-12">Arroz bomba infusionado en un fondo denso de marisco, coronado con carabinero asado a la parrilla.</p>
+                </div>
+
+                <div class="group">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight group-hover:text-[#C65A1E] transition-colors">Taco de Pulpo Ahumado</h3>
+                        <div class="flex-grow border-b border-white/10 border-dotted mx-4 relative top-[-6px]"></div>
+                        <span class="font-['Forum'] text-xl text-white">21€</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 font-light pr-12">Pulpo braseado sobre crema de patata revolcona y un ligero toque de pimentón de la Vera.</p>
+                </div>
+
+                <div class="group">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="font-['Forum'] text-xl md:text-2xl text-white tracking-tight group-hover:text-[#C65A1E] transition-colors">Tarta de Queso Fluida</h3>
+                        <div class="flex-grow border-b border-white/10 border-dotted mx-4 relative top-[-6px]"></div>
+                        <span class="font-['Forum'] text-xl text-white">9€</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 font-light pr-12">Nuestra clásica tarta de queso horneada al momento con un corazón líquido, servida con helado de frutos rojos.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-normal text-white border border-white/20 rounded-xl hover:bg-white hover:text-[#0a0a0a] transition-all duration-300">
+                    Ver Carta Completa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CINEMATIC BANNER -->
+    <section class="relative py-32 md:py-48 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" alt="Preparación gastronómica" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+            <h2 class="font-['Forum'] text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-6">Descubre Ramiro</h2>
+            <p class="text-base md:text-lg text-neutral-300 font-light">
+                Explora la pasión, el fuego y la rigurosa artesanía detrás de cada plato que servimos. Es más que una comida; es un homenaje al buen gusto en pleno centro de Alcobendas.
+            </p>
+        </div>
+    </section>
+
+    <!-- 8. CHEFS SECTION -->
+    <section id="equipo" class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="text-[#C65A1E] text-xs font-normal tracking-widest uppercase mb-2 block">Los Maestros</span>
+                    <h2 class="font-['Forum'] text-4xl md:text-5xl text-white tracking-tight">Conoce a Nuestro Equipo</h2>
+                </div>
+                <p class="text-sm text-neutral-400 max-w-md font-light leading-relaxed">
+                    Aportando décadas de experiencia desde las cocinas tradicionales españolas hasta la escena culinaria moderna.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="group">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-[#111]">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&amp;w=1968&amp;auto=format&amp;fit=crop" alt="Chef Carlos Ramiro" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                    </div>
+                    <h3 class="font-['Forum'] text-2xl text-white tracking-tight mb-1">Carlos Ramiro</h3>
+                    <span class="text-xs text-[#C65A1E] uppercase tracking-widest font-normal block mb-3">Jefe de Cocina</span>
+                    <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                        Con más de 20 años dominando las técnicas de cocción al fuego en la capital, el Chef Carlos aporta un estándar inquebrantable de sabor auténtico y presentación exquisita a cada plato.
+                    </p>
+                </div>
+                <div class="group md:mt-16">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-[#111]">
+                        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" alt="Chef Elena Valdés" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                    </div>
+                    <h3 class="font-['Forum'] text-2xl text-white tracking-tight mb-1">Elena Valdés</h3>
+                    <span class="text-xs text-[#C65A1E] uppercase tracking-widest font-normal block mb-3">Sous Chef</span>
+                    <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                        Especialista en maridados y fondos, el toque delicado de Elena equilibra el intenso calor de la parrilla con matices sutiles y fragantes que definen nuestros platos estrella.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. REVIEWS SECTION -->
+    <section class="py-24 bg-[#0d0d0d] px-6 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-8 rounded-2xl bg-[#111] border border-white/5 relative">
+                    <iconify-icon icon="solar:quote-right-linear" width="48" stroke-width="1.5" class="absolute top-6 right-6 text-white/5"></iconify-icon>
+                    <div class="flex items-center gap-1 mb-6 text-[#C65A1E]">
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-neutral-300 font-light italic leading-relaxed mb-6">"Una experiencia gastronómica inolvidable. Las carnes a la brasa son increíbles y el ambiente se siente tan exclusivo como acogedor. Sin duda, el mejor de Alcobendas."</p>
+                    <span class="text-xs text-neutral-500 uppercase tracking-widest font-normal">Javier T.</span>
+                </div>
+                <div class="p-8 rounded-2xl bg-[#111] border border-white/5 relative">
+                    <iconify-icon icon="solar:quote-right-linear" width="48" stroke-width="1.5" class="absolute top-6 right-6 text-white/5"></iconify-icon>
+                    <div class="flex items-center gap-1 mb-6 text-[#C65A1E]">
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-neutral-300 font-light italic leading-relaxed mb-6">"El ambiente es cálido y de primera categoría. El chuletón madurado fue probablemente el mejor que he probado en Madrid. Recomiendo reservar con antelación."</p>
+                    <span class="text-xs text-neutral-500 uppercase tracking-widest font-normal">Sara L.</span>
+                </div>
+                <div class="p-8 rounded-2xl bg-[#111] border border-white/5 relative">
+                    <iconify-icon icon="solar:quote-right-linear" width="48" stroke-width="1.5" class="absolute top-6 right-6 text-white/5"></iconify-icon>
+                    <div class="flex items-center gap-1 mb-6 text-[#C65A1E]">
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear" width="16" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-neutral-300 font-light italic leading-relaxed mb-6">"La mejor comida de autor que he probado recientemente. La estética oscura y elegante lo hace perfecto para una cena en pareja o una reunión de negocios."</p>
+                    <span class="text-xs text-neutral-500 uppercase tracking-widest font-normal">Miguel R.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. BLOG SECTION -->
+    <section id="blog" class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="text-[#C65A1E] text-xs font-normal tracking-widest uppercase mb-2 block">Diario</span>
+                    <h2 class="font-['Forum'] text-4xl md:text-5xl text-white tracking-tight">Historias al Calor del Fuego</h2>
+                </div>
+                <a href="#" class="text-sm text-white hover:text-[#C65A1E] transition-colors flex items-center gap-2 pb-2">
+                    Ver Todos los Artículos <iconify-icon icon="solar:arrow-right-linear" stroke-width="1.5"></iconify-icon>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="#" class="group block rounded-2xl bg-[#111] border border-white/5 overflow-hidden hover:border-white/10 transition-colors">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&amp;w=1974&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-neutral-500 mb-3 block">12 Oct, 2024</span>
+                        <h3 class="font-['Forum'] text-xl text-white tracking-tight mb-3 group-hover:text-[#C65A1E] transition-colors">La Historia Detrás de Nuestros Cortes</h3>
+                        <p class="text-sm text-neutral-400 font-light mb-6 line-clamp-2">Descubre el proceso de maduración y selección que define la excelencia de nuestra carta de carnes.</p>
+                        <span class="text-xs font-normal text-white group-hover:text-[#C65A1E] transition-colors flex items-center gap-1.5 uppercase tracking-widest">
+                            Leer Más <iconify-icon icon="solar:arrow-right-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="group block rounded-2xl bg-[#111] border border-white/5 overflow-hidden hover:border-white/10 transition-colors">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-neutral-500 mb-3 block">05 Oct, 2024</span>
+                        <h3 class="font-['Forum'] text-xl text-white tracking-tight mb-3 group-hover:text-[#C65A1E] transition-colors">5 Platos Imprescindibles en Ramiro</h3>
+                        <p class="text-sm text-neutral-400 font-light mb-6 line-clamp-2">Una guía curada para navegar por nuestro menú, desde las croquetas artesanas hasta los arroces melosos.</p>
+                        <span class="text-xs font-normal text-white group-hover:text-[#C65A1E] transition-colors flex items-center gap-1.5 uppercase tracking-widest">
+                            Leer Más <iconify-icon icon="solar:arrow-right-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="group block rounded-2xl bg-[#111] border border-white/5 overflow-hidden hover:border-white/10 transition-colors">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-neutral-500 mb-3 block">28 Sep, 2024</span>
+                        <h3 class="font-['Forum'] text-xl text-white tracking-tight mb-3 group-hover:text-[#C65A1E] transition-colors">El Arte de la Cocina a la Brasa</h3>
+                        <p class="text-sm text-neutral-400 font-light mb-6 line-clamp-2">Por qué creemos que cocinar sobre fuego abierto es la única manera de desbloquear la verdadera profundidad de nuestros ingredientes.</p>
+                        <span class="text-xs font-normal text-white group-hover:text-[#C65A1E] transition-colors flex items-center gap-1.5 uppercase tracking-widest">
+                            Leer Más <iconify-icon icon="solar:arrow-right-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. LOCATIONS SECTION -->
+    <section id="ubicacion" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto bg-[#111] border border-white/5 rounded-2xl overflow-hidden flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/2 min-h-[400px] relative bg-[#1a1a1a]">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&amp;w=2074&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale mix-blend-luminosity">
+                <div class="absolute inset-0 bg-[#0a0a0a]/50"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#C65A1E] flex flex-col items-center drop-shadow-[0_0_15px_rgba(198,90,30,0.5)]">
+                    <iconify-icon icon="solar:map-point-linear" width="48" stroke-width="1.5"></iconify-icon>
+                    <div class="w-3 h-1 bg-black/50 rounded-[100%] mt-1 blur-[2px]"></div>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-1/2 p-12 md:p-16 flex flex-col justify-center">
+                <h2 class="font-['Forum'] text-3xl md:text-4xl text-white tracking-tight mb-8">Visítanos</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="text-xs text-neutral-500 uppercase tracking-widest font-normal mb-3 flex items-center gap-2">
+                            <iconify-icon icon="solar:map-point-linear" width="16" stroke-width="1.5"></iconify-icon> Dirección
+                        </h4>
+                        <p class="text-base text-neutral-300 font-light leading-relaxed">
+                            Calle de la Constitución 15,<br>
+                            Alcobendas,<br>
+                            Madrid, 28100
+                        </p>
+                    </div>
+                    
+                    <div class="h-px w-full bg-white/5"></div>
+                    
+                    <div>
+                        <h4 class="text-xs text-neutral-500 uppercase tracking-widest font-normal mb-3 flex items-center gap-2">
+                            <iconify-icon icon="solar:clock-circle-linear" width="16" stroke-width="1.5"></iconify-icon> Horario
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4 max-w-xs text-sm text-neutral-300 font-light">
+                            <span>Comidas:</span>
+                            <span>13:30 – 16:00</span>
+                            <span>Cenas:</span>
+                            <span>20:30 – 23:30</span>
+                        </div>
+                        <p class="text-xs text-[#C65A1E] mt-3 italic">* Cerramos los lunes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FOOTER -->
+    <footer class="bg-[#050505] pt-20 pb-8 px-6 border-t border-white/5 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-1">
+                    <span class="font-['Forum'] text-2xl text-white tracking-tight uppercase mb-4 block">Ramiro</span>
+                    <p class="text-sm text-neutral-500 font-light leading-relaxed pr-4">
+                        Sabores audaces. Momentos cálidos. Experiencias inolvidables elaboradas junto al fuego.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-sm font-normal mb-6">Enlaces</h4>
+                    <ul class="space-y-3 text-sm text-neutral-500 font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#carta" class="hover:text-white transition-colors">Nuestra Carta</a></li>
+                        <li><a href="#reserva" class="hover:text-[#C65A1E] transition-colors">Reservas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-sm font-normal mb-6">Contacto</h4>
+                    <ul class="space-y-3 text-sm text-neutral-500 font-light">
+                        <li>+34 912 345 678</li>
+                        <li>reservas@restauranteramiro.es</li>
+                        <li>Alcobendas, Madrid</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-sm font-normal mb-6">Síguenos</h4>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#111] border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/20 transition-all">
+                            <iconify-icon icon="solar:camera-linear" width="20" stroke-width="1.5"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#111] border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/20 transition-all">
+                            <iconify-icon icon="solar:letter-linear" width="20" stroke-width="1.5"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#111] border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/20 transition-all">
+                            <iconify-icon icon="solar:globus-linear" width="20" stroke-width="1.5"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-neutral-600 font-light">© 2024 Restaurante Ramiro. Todos los derechos reservados.</p>
+                <div class="flex gap-4 text-xs text-neutral-600 font-light">
+                    <a href="#" class="hover:text-neutral-300">Aviso Legal</a>
+                    <a href="#" class="hover:text-neutral-300">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>
